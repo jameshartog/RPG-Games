@@ -145,7 +145,7 @@ public class Enemy
         clear();
     }
     
-    //Main program
+    //Main program [Swap to a public static void]
     public static void main(String[] args) {
         explain();
         
