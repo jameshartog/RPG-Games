@@ -35,18 +35,18 @@ public class Enemy
     
     //Enemy Type Variables
     
-    String name;
+    public String name;
     //Enemy Name
-    int health;
+    public int health;
     //Maximum Health an enemy can have 
     //(later add a variance to it like 5 up or below)
-    double strength;
+    public double strength;
     //Strength multiplication factor on attacks
     //(Base Damage) x (Strength) x (Player Defence) = Actual damage
-    double defence;
+    public double defence;
     //Defence multiplication factor on defence
     //(Base Damage) x (Player Strength) x (Defence) = Actual damage
-    String attribute;
+    public String attribute;
     //Misc. Attribute types which have specialized effects with a if else program
     //Slimes have "Corrosion" which deals more damage for the longer a battle lasts
     
@@ -82,7 +82,7 @@ public class Enemy
     }
     
     //Activating Enemies (Currently Nulled)
-    static void activationEnemies() {
+    public static void activationEnemies() {
         Enemy slime = new Enemy("Slime", 5, 0.2, 0.2, "Corrosion");
         //Corrosion deals more damages as the turn counter ticks up
         Enemy ghost = new Enemy("Ghost", 8, 0.5, 0.2, "Ethereal");
@@ -91,6 +91,30 @@ public class Enemy
         //Tough halves the damage taken by Player Attacks
         Enemy golem = new Enemy("Golem", 20, 0.5, 0.5, "Regeneration");
         //Regeneration heals 1-4 health points per turn
+        
+    }
+    
+    public static void setEnemy() {
+        if (Battle.e == 1) {
+            Enemy slime = new Enemy("Slime", 5, 0.2, 0.2, "Corrosion");
+            slime.setStatus();
+        }
+        
+    }
+    
+    public static String activeName;
+    public static int activeHealth;
+    public static int healthBar;
+    public static double activeStrength;
+    public static double activeDefence;
+    public static String activeAttribute;
+    public void setStatus() {
+         activeName = name;
+         activeHealth = health;
+         healthBar = health;
+         activeStrength = strength;
+         activeDefence = defence;
+         activeAttribute = attribute;
     }
     
     //Print List
@@ -109,7 +133,7 @@ public class Enemy
         }
     }
     
-    static void explain(){
+    public static void explain(){
         String cont = "yes";
         while (cont.equals("yes")) {
             System.out.println("Enemy Stat Card Definitions:");
