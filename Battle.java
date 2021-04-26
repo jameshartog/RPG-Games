@@ -12,6 +12,11 @@ public class Battle
     public static double curHP;
     public static int e = 1; //enemy type
     public static int t = 0; //Turn counter
+    public static int playerHP;
+    public static int playerMaxHP;
+    public static double playerStrength;
+    public static double playerDefence;
+    
     //Clear
     static void clear() {
         System.out.print('\u000C');
@@ -31,35 +36,67 @@ public class Battle
         System.out.println(Enemy.activeName);
         System.out.println("HP: " + Enemy.healthBar + "/" + Enemy.activeHealth);
         System.out.println("--------------------");
-        System.out.println("Turn: " + t);
-        //pixelArt();
+        
         //PlayerHidden variables: activeStrength, activeDefence, & activeAttribute
     }
     
-    //Nulled
-    public static void pixelArt() {
-        if (Enemy.activeName.equals("Slime")) {
-            
-        }
+    public static void playerHeader() {
+        System.out.println("Player");
+        System.out.println("HP: " + playerHP + "/" + playerMaxHP);
+        System.out.println("--------------------");
+        System.out.println("Turn: " + t);
     }
     
     public static void interfaces() {
         header();
-        //moveset();
-        //playerInput()
+        playerHeader();
     }
     
     public static void opponentTurn() {
-        header();
+        interfaces();
+        //if monster = slime then _ Moves
+        //Player input anything to continue
         //Random move with weights to them
+    }
+    
+    public static void playerMoveset() {
+        //Print Move Options
+        System.out.println("Input Player Attack Options:");
+        System.out.println("[Slash]");
+        System.out.println("[Crush]");
+        System.out.println("[Pierce]");
+        System.out.println("[Stengthen]");
+        System.out.println("[Fortify]");
+        
+        //Player Input
+        String attack = userScan.next();
+        
+        //Outcome
+        double damage = 0;
+        double actualDamage;
+        
+        if (attack.equals("Slash") || attack.equals("[Slash]")) {
+            if (Enemy.activeName.equals("Slime")) {
+                damage = 3;
+            }
+        }
+        actualDamage = damage * playerStrength / Enemy.activeDefence;
+        int IntDamage = (int) actualDamage;
+        //Enemy.healthBar
+        //Player stats are all 1 while Monster stats varry
     }
     
     public static void playerTurn() {
         interfaces();
+        //playerMoveset/Input
     }
     
     public static void combat() {
         activateEnemy();
+        playerHP = 25;
+        playerMaxHP = 25;
+        playerStrength = 1;
+        playerDefence = 1;
         while (Enemy.healthBar > 0) {
             playerTurn();
             opponentTurn();

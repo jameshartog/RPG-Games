@@ -6,7 +6,7 @@
  */
 import java.util.Scanner;
 
-public class RPG
+public class RPG_Defunct
 {
     //
     public static Scanner userScan = new Scanner(System.in);
