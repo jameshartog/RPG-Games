@@ -61,13 +61,14 @@ public class Battle
     
     public static void playerMoveset() {
         //Print Move Options
-        System.out.println("Input Player Attack Options:");
-        System.out.println("[Slash]");
-        System.out.println("[Crush]");
-        System.out.println("[Pierce]");
-        System.out.println("[Stengthen]");
-        System.out.println("[Fortify]");
-        
+        //if (playerAttribute.equals("None")) {
+            System.out.println("Input Player Attack Options:");
+            System.out.println("[Slash]");
+            System.out.println("[Crush]");
+            System.out.println("[Pierce]");
+            System.out.println("[Stengthen]");
+            System.out.println("[Fortify]");
+        //}
         //Player Input
         String attack = userScan.next();
         
