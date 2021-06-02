@@ -56,19 +56,19 @@ public class Entity {
     
     public static void setActive() {
         if (Combat.e == 1) {
-            Entity slime = new Entity("Slime", 5, 0.2, 0.2, "Corrosion");
+            Entity slime = new Entity("Slime", 30, 0.2, 0.2, "Corrosion");
             slime.setStatus();
         }
         else if (Combat.e == 2) {
-            Entity ghost = new Entity("Ghost", 8, 0.5, 0.2, "Ethereal");
+            Entity ghost = new Entity("Ghost", 30, 0.5, 0.2, "Ethereal");
             ghost.setStatus();
         }
         else if (Combat.e == 3) {
-            Entity skeleton = new Entity("Skeleton", 12, 0.3, 0.7, "Tough");
+            Entity skeleton = new Entity("Skeleton", 45, 0.3, 0.7, "Tough");
             skeleton.setStatus();
         }
         else if (Combat.e == 4) {
-            Entity golem = new Entity("Golem", 20, 0.5, 0.5, "Regeneration");
+            Entity golem = new Entity("Golem", 70, 0.5, 0.5, "Regeneration");
             golem.setStatus();
         }
         Entity player = new Entity("Player", 15, 1, 1, "None");
@@ -90,10 +90,10 @@ public class Entity {
         //Entity name = new Entity ("name", health, strength, defence, attribute);
         //Entity player = new Entity("name", ?, ?, ?, "?");
         //^At start make 3 choices of stats available^
-        Entity slime = new Entity("Slime", 5, 0.2, 0.2, "Corrosion");
-        Entity ghost = new Entity("Ghost", 8, 0.5, 0.2, "Ethereal");
-        Entity skeleton = new Entity("Skeleton", 12, 0.3, 0.7, "Tough");
-        Entity golem = new Entity("Golem", 20, 0.5, 0.5, "Regeneration");
+        Entity slime = new Entity("Slime", 30, 0.2, 0.2, "Corrosion");
+        Entity ghost = new Entity("Ghost", 30, 0.5, 0.2, "Ethereal");
+        Entity skeleton = new Entity("Skeleton", 45, 0.3, 0.7, "Tough");
+        Entity golem = new Entity("Golem", 70, 0.5, 0.5, "Regeneration");
         Entity player = new Entity("Player", 15, 1, 1, "None");
         //future player option 1: player ("Knight", 20, 1, 2, "Magicless");
         //future player option 2: player ("Mage", 10, 2, 1, "Magecraft");
